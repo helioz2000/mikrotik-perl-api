@@ -296,7 +296,8 @@ sub login
     undef(@command);
     push(@command, '/login');
     push(@command, '=name=' . $username);
-    push(@command, '=response=00' . $hexdigest);
+    #push(@command, '=response=00' . $hexdigest);
+    push(@command, '=password=' . $passwd);
     ($retval,@results) = &talk(\@command);
     if ($retval > 1)
     {
